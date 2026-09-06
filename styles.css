@@ -4,8 +4,8 @@
 	--paper: #f4f1e9;
 	--card: #fffdf8;
 	--line: #d8ddd3;
-	--moss: #58715d;
-	--moss-dark: #36513f;
+	--moss: #8ecae6;
+	--moss-dark: #8ecae6;
 	--coral: #c96f57;
 	--art-shadow: #dfe4d8;
 	--serif: Georgia, "Times New Roman", serif;
@@ -29,8 +29,8 @@ body.dark-mode {
 	--paper: #18211d;
 	--card: #22302a;
 	--line: #3a4a40;
-	--moss: #66866c;
-	--moss-dark: #9fbea1;
+	--moss: #8ecae6;
+	--moss-dark: #8ecae6;
 	--coral: #ed997c;
 	--art-shadow: #0e1511;
 }
