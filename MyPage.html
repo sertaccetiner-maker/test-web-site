@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="My Company is a sample journal for curious minds and thoughtful work.">
+	<title>My Company | A quiet place for good ideas</title>
+	<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+	<header class="site-header">
+		<a class="brand" href="#top" aria-label="My Company home">
+			<span class="brand-mark"><span>✦</span></span>
+			My Company
+		</a>
+		<nav aria-label="Primary navigation">
+			<a href="#stories">Stories</a>
+			<a href="#about">About</a>
+			<a href="#subscribe">Subscribe</a>
+		</nav>
+		<button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+			<span class="theme-icon" aria-hidden="true">☾</span>
+			<span class="theme-label">Dark mode</span>
+		</button>
+	</header>
+
+	<main id="top" class="page-shell">
+		<section class="hero" id="about">
+			<div>
+				<div class="eyebrow">A small journal for curious people</div>
+				<h1>Make room for better ideas.</h1>
+				<p class="hero-copy">My Company is a quiet corner of the internet for observations, useful questions, and the occasional unexpected connection.</p>
+				<a class="button" href="#stories">Explore the journal</a>
+			</div>
+			<div class="hero-art" aria-label="Abstract landscape illustration" role="img">
+				<div class="sun"></div>
+				<div class="leaf one"></div>
+				<div class="leaf two"></div>
+				<div class="art-label">Notice what is already here.</div>
+			</div>
+		</section>
+
+		<section id="stories" aria-labelledby="stories-title">
+			<div class="section-heading">
+				<h2 id="stories-title">Recent notes</h2>
+				<a href="#stories">View all notes +</a>
+			</div>
+			<div class="articles">
+				<article class="article">
+					<div class="article-number">01</div>
+					<h3>The useful power of a slower morning</h3>
+					<p>What changes when the first hour of the day belongs to attention instead of reaction?</p>
+					<a class="read-more" href="#stories">Read note</a>
+				</article>
+				<article class="article">
+					<div class="article-number">02</div>
+					<h3>How to follow a question further</h3>
+					<p>A practical little method for turning a passing curiosity into meaningful research.</p>
+					<a class="read-more" href="#stories">Read note</a>
+				</article>
+				<article class="article">
+					<div class="article-number">03</div>
+					<h3>Collecting moments of enough</h3>
+					<p>Notes on finishing, appreciating the ordinary, and resisting the urge to optimize everything.</p>
+					<a class="read-more" href="#stories">Read note</a>
+				</article>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer" id="subscribe">
+		<span>&copy; 2026 My Company</span>
+		<span>One thoughtful letter, every other Sunday.</span>
+	</footer>
+
+	<script>
+		const themeToggle = document.querySelector('.theme-toggle');
+		const savedTheme = localStorage.getItem('theme');
+		const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+		function setTheme(isDark) {
+			document.body.classList.toggle('dark-mode', isDark);
+			themeToggle.setAttribute('aria-pressed', String(isDark));
+			themeToggle.setAttribute('aria-label', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+			themeToggle.querySelector('.theme-icon').textContent = isDark ? '☀' : '☾';
+			themeToggle.querySelector('.theme-label').textContent = isDark ? 'Light mode' : 'Dark mode';
+		}
+
+		setTheme(savedTheme ? savedTheme === 'dark' : prefersDark);
+
+		themeToggle.addEventListener('click', () => {
+			const isDark = !document.body.classList.contains('dark-mode');
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+			setTheme(isDark);
+		});
+	</script>
+</body>
+</html>
